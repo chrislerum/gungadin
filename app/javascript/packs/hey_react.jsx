@@ -9,6 +9,12 @@ export default class Hey extends React.Component {
   constructor(props) {
     super(props)
     this.state = {master: 'First'}
+
+    this.changeMaster = this.changeMaster.bind(this)
+  }
+
+  changeMaster() {
+    this.setState({master: 'Second'})
   }
 
   render() {
@@ -19,30 +25,30 @@ export default class Hey extends React.Component {
         <table>
           <tbody>
             <tr>
-              <td><Inside /></td>
-              <td><Inside /></td>
-              <td><Inside /></td>
+              <td>{this.state.master}</td>
+              <td><Inside value={this.state.master} /></td>
+              <td><button onClick={this.changeMaster}>Change Master</button></td>
             </tr>
             <tr>
-              <td><Inside /></td>
-              <td><Inside /></td>
-              <td><Inside /></td>
+              <td><Inside value={this.state.master} /></td>
+              <td><Inside value={this.state.master} /></td>
+              <td><Inside value={this.state.master} /></td>
             </tr>
             <tr>
-              <td><Inside /></td>
-              <td><Inside /></td>
-              <td><Inside /></td>
+              <td><Inside value={this.state.master} /></td>
+              <td><Inside value={this.state.master} /></td>
+              <td><Inside value={this.state.master} /></td>
             </tr>
           </tbody>
         </table>
       </div>
       )
   }
-
 }
-  document.addEventListener('DOMContentLoaded', () => {
-    ReactDOM.render(
-      <Hey />,
-      document.body.appendChild(document.createElement('div')),
-    )
-  })
+
+document.addEventListener('DOMContentLoaded', () => {
+  ReactDOM.render(
+    <Hey />,
+    document.body.appendChild(document.createElement('div')),
+  )
+})

@@ -14,12 +14,13 @@ export default class Inside extends React.Component {
 
   activateLasers() {
     this.setState({when: 'Soon!'})
+    console.log(this.props)
   }
 
   render() {
     return(
     <div>
-      <div>Inside!</div>
+      <div>Inside, master is {this.props.value}.</div>
       <button className='button' onClick={this.activateLasers}>Activate Lasers {this.state.when}</button>
     </div>
     )
