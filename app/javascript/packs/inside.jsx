@@ -2,15 +2,26 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import PropTypes from 'prop-types'
 
-function activateLasers() {
-  alert(9)
-}
 
-const Inside = props => (
-  <div>
-  <div>Inside!</div>
-  <button className='button' onClick={activateLasers}>Activate Lasers</button>
+export default class Inside extends React.Component {
+
+  constructor(props) {
+    super(props)
+    this.state = {when: 'Now!'}
+
+    this.activateLasers = this.activateLasers.bind(this)
+  }
+
+  activateLasers() {
+    this.setState({when: 'Soon!'})
+  }
+
+  render() {
+    return(
+    <div>
+      <div>Inside!</div>
+      <button className='button' onClick={this.activateLasers}>Activate Lasers {this.state.when}</button>
     </div>
-  )
-
-export default Inside
+    )
+  }
+}
