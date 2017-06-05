@@ -6,8 +6,16 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import PropTypes from 'prop-types'
 
+const style = {
+  color: 'white',
+  border: '1px solid black',
+  backgroundColor: 'red',
+  width: 300,
+  height: 100
+}
+
 const Hello = props => (
-  <div>Hello {props.name}!</div>
+  <div style={style}>Hello {props.name}!</div>
 )
 
 Hello.defaultProps = {
