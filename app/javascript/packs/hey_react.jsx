@@ -4,47 +4,45 @@ import PropTypes from 'prop-types'
 import Inside from './inside.jsx'
 import Buckaroo from './buckaroo.jsx'
 
-const style = {
-  color: 'blue'
+export default class Hey extends React.Component {
+
+  constructor(props) {
+    super(props)
+    this.state = {master: 'First'}
+  }
+
+  render() {
+    return(
+      <div>
+        <div>Hey</div>
+        <Buckaroo />
+        <table>
+          <tbody>
+            <tr>
+              <td><Inside /></td>
+              <td><Inside /></td>
+              <td><Inside /></td>
+            </tr>
+            <tr>
+              <td><Inside /></td>
+              <td><Inside /></td>
+              <td><Inside /></td>
+            </tr>
+            <tr>
+              <td><Inside /></td>
+              <td><Inside /></td>
+              <td><Inside /></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      )
+  }
+
 }
-
-const Hey = props => (
-  <div>
-    <div>Hey {props.name}!</div>
-    <Buckaroo />
-    <table>
-      <tbody>
-        <tr>
-          <td style={style}><Inside /></td>
-          <td><Inside /></td>
-          <td><Inside /></td>
-        </tr>
-        <tr>
-          <td><Inside /></td>
-          <td><Inside /></td>
-          <td><Inside /></td>
-        </tr>
-        <tr>
-          <td><Inside /></td>
-          <td><Inside /></td>
-          <td><Inside /></td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-  )
-
-Hey.defaultProps = {
-  name: 'John'
-}
-
-Hey.propTypes = {
-  name: PropTypes.string
-}
-
-document.addEventListener('DOMContentLoaded', () => {
-  ReactDOM.render(
-    <Hey name="Boz" />,
-    document.body.appendChild(document.createElement('div')),
-  )
-})
+  document.addEventListener('DOMContentLoaded', () => {
+    ReactDOM.render(
+      <Hey />,
+      document.body.appendChild(document.createElement('div')),
+    )
+  })
