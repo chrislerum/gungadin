@@ -29,16 +29,6 @@ export default class Hey extends React.Component {
               <td><Inside value={this.state.master} /></td>
               <td><button onClick={this.changeMaster}>Change Master</button></td>
             </tr>
-            <tr>
-              <td><Inside value={this.state.master} /></td>
-              <td><Inside value={this.state.master} /></td>
-              <td><Inside value={this.state.master} /></td>
-            </tr>
-            <tr>
-              <td><Inside value={this.state.master} /></td>
-              <td><Inside value={this.state.master} /></td>
-              <td><Inside value={this.state.master} /></td>
-            </tr>
           </tbody>
         </table>
       </div>
